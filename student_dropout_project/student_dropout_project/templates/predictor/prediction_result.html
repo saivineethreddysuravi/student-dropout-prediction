@@ -1,0 +1,18 @@
+{% extends 'predictor/base.html' %}
+{% block content %}
+<h2>Prediction Result</h2>
+
+<p><strong>Prediction:</strong> {{ prediction.prediction_result }}</p>
+<p><strong>Date:</strong> {{ prediction.created_at }}</p>
+
+<h3>Input Details</h3>
+<ul>
+    <li>Marital Status: {{ prediction.marital_status }}</li>
+    <li>Application Mode: {{ prediction.application_mode }}</li>
+    <li>Application Order: {{ prediction.application_order }}</li>
+    <li>Course: {{ prediction.course }}</li>
+</ul>
+
+<a href="{% url 'predict' %}">Make another prediction</a> |
+<a href="{% url 'history' %}">View history</a>
+{% endblock %}

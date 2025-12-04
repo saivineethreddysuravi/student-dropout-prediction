@@ -1,0 +1,62 @@
+How to install Python 3.13.0 on Windows 11
+https://www.youtube.com/watch?v=C3bOxcILGu4
+
+C:\AndeRamiReddy\DATA\Softwares-ThisLaptop
+
+How to Install Visual Studio Code on Windows 11 (UPDATED 2025)
+
+https://www.youtube.com/watch?v=DoLYVXR9SSc
+
+python -m pip install pandas
+pip install Django==4.2.1
+pip install scikit-learn==1.6.1
+python -m pip install  joblib==1.5.2
+
+
+datasrt source:
+https://archive.ics.uci.edu/dataset/697/predict+students+dropout+and+academic+success
+
+
+python manage.py makemigrations
+python manage.py migrate
+python manage.py runserver
+python manage.py createsuperuser
+python manage.py runserver
+
+http://127.0.0.1:8000/register/
+
+/register/ → registration
+
+/login/ → login
+
+/predict/ → prediction form
+
+/history/ → your prediction history
+
+
+
+super user:
+python manage.py createsuperuser
+
+http://127.0.0.1:8000/admin/login/?next=/admin/
+/admin/ → admin panel
+
+vineethreddy/vineethreddy@123
+
+have two records in history
+
+“The admission grade represents the student’s overall entry score (0–200) used during university admission. It reflects prior academic performance and is used to help predict retention or dropout risk.”
+
+
+application user 
+vineethreddy_app12/Welcome12@
+
+
+urls:
+http://127.0.0.1:8000/login/
+http://127.0.0.1:8000/predict/
+http://127.0.0.1:8000/history/
+http://127.0.0.1:8000/field-info/
+
+
+
