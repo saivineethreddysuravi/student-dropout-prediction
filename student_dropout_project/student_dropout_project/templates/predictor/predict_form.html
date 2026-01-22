@@ -1,0 +1,455 @@
+{% extends 'predictor/base.html' %}
+
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-lg-10 col-xl-9">
+        <div class="card shadow-sm">
+            <div class="card-header text-center">
+                <h4 class="mb-0">Student Dropout Prediction</h4>
+            </div>
+            <div class="card-body">
+                <form method="post" novalidate>
+                    {% csrf_token %}
+
+                    {% if form.non_field_errors %}
+                        <div class="alert alert-danger">
+                            {{ form.non_field_errors }}
+                        </div>
+                    {% endif %}
+
+                    <h5 class="mb-3">Student &amp; Admission Details</h5>
+
+                    <!-- Row 1 -->
+                    <div class="row mb-3 align-items-center">
+                        <div class="col-md-3 text-md-end">
+                            <label class="form-label" for="{{ form.marital_status.id_for_label }}">
+                                {{ form.marital_status.label }}
+                            </label>
+                        </div>
+                        <div class="col-md-3">
+                            {{ form.marital_status }}
+                            {{ form.marital_status.errors }}
+                        </div>
+
+                        <div class="col-md-3 text-md-end">
+                            <label class="form-label" for="{{ form.application_mode.id_for_label }}">
+                                {{ form.application_mode.label }}
+                            </label>
+                        </div>
+                        <div class="col-md-3">
+                            {{ form.application_mode }}
+                            {{ form.application_mode.errors }}
+                        </div>
+                    </div>
+
+                    <!-- Row 2 -->
+                    <div class="row mb-3 align-items-center">
+                        <div class="col-md-3 text-md-end">
+                            <label class="form-label" for="{{ form.application_order.id_for_label }}">
+                                {{ form.application_order.label }}
+                            </label>
+                        </div>
+                        <div class="col-md-3">
+                            {{ form.application_order }}
+                            {{ form.application_order.errors }}
+                        </div>
+
+                        <div class="col-md-3 text-md-end">
+                            <label class="form-label" for="{{ form.course.id_for_label }}">
+                                {{ form.course.label }}
+                            </label>
+                        </div>
+                        <div class="col-md-3">
+                            {{ form.course }}
+                            {{ form.course.errors }}
+                        </div>
+                    </div>
+
+                    <!-- Row 3 -->
+                    <div class="row mb-3 align-items-center">
+                        <div class="col-md-3 text-md-end">
+                            <label class="form-label" for="{{ form.daytime_evening_attendance.id_for_label }}">
+                                {{ form.daytime_evening_attendance.label }}
+                            </label>
+                        </div>
+                        <div class="col-md-3">
+                            {{ form.daytime_evening_attendance }}
+                            {{ form.daytime_evening_attendance.errors }}
+                        </div>
+
+                        <div class="col-md-3 text-md-end">
+                            <label class="form-label" for="{{ form.previous_qualification.id_for_label }}">
+                                {{ form.previous_qualification.label }}
+                            </label>
+                        </div>
+                        <div class="col-md-3">
+                            {{ form.previous_qualification }}
+                            {{ form.previous_qualification.errors }}
+                        </div>
+                    </div>
+
+                    <!-- Row 4 -->
+                    <div class="row mb-3 align-items-center">
+                        <div class="col-md-3 text-md-end">
+                            <label class="form-label" for="{{ form.previous_qualification_grade.id_for_label }}">
+                                {{ form.previous_qualification_grade.label }}
+                            </label>
+                        </div>
+                        <div class="col-md-3">
+                            {{ form.previous_qualification_grade }}
+                            {{ form.previous_qualification_grade.errors }}
+                        </div>
+
+                        <div class="col-md-3 text-md-end">
+                            <label class="form-label" for="{{ form.nacionality.id_for_label }}">
+                                {{ form.nacionality.label }}
+                            </label>
+                        </div>
+                        <div class="col-md-3">
+                            {{ form.nacionality }}
+                            {{ form.nacionality.errors }}
+                        </div>
+                    </div>
+
+                    <!-- Row 5 -->
+                    <div class="row mb-3 align-items-center">
+                        <div class="col-md-3 text-md-end">
+                            <label class="form-label" for="{{ form.mother_s_qualification.id_for_label }}">
+                                {{ form.mother_s_qualification.label }}
+                            </label>
+                        </div>
+                        <div class="col-md-3">
+                            {{ form.mother_s_qualification }}
+                            {{ form.mother_s_qualification.errors }}
+                        </div>
+
+                        <div class="col-md-3 text-md-end">
+                            <label class="form-label" for="{{ form.father_s_qualification.id_for_label }}">
+                                {{ form.father_s_qualification.label }}
+                            </label>
+                        </div>
+                        <div class="col-md-3">
+                            {{ form.father_s_qualification }}
+                            {{ form.father_s_qualification.errors }}
+                        </div>
+                    </div>
+
+                    <!-- Row 6 -->
+                    <div class="row mb-3 align-items-center">
+                        <div class="col-md-3 text-md-end">
+                            <label class="form-label" for="{{ form.mother_s_occupation.id_for_label }}">
+                                {{ form.mother_s_occupation.label }}
+                            </label>
+                        </div>
+                        <div class="col-md-3">
+                            {{ form.mother_s_occupation }}
+                            {{ form.mother_s_occupation.errors }}
+                        </div>
+
+                        <div class="col-md-3 text-md-end">
+                            <label class="form-label" for="{{ form.father_s_occupation.id_for_label }}">
+                                {{ form.father_s_occupation.label }}
+                            </label>
+                        </div>
+                        <div class="col-md-3">
+                            {{ form.father_s_occupation }}
+                            {{ form.father_s_occupation.errors }}
+                        </div>
+                    </div>
+
+                    <!-- Row 7 -->
+                    <div class="row mb-3 align-items-center">
+                        <div class="col-md-3 text-md-end">
+                            <label class="form-label" for="{{ form.admission_grade.id_for_label }}">
+                                {{ form.admission_grade.label }}
+                            </label>
+                        </div>
+                        <div class="col-md-3">
+                            {{ form.admission_grade }}
+                            {{ form.admission_grade.errors }}
+                        </div>
+
+                        <div class="col-md-3 text-md-end">
+                            <label class="form-label" for="{{ form.displaced.id_for_label }}">
+                                {{ form.displaced.label }}
+                            </label>
+                        </div>
+                        <div class="col-md-3">
+                            {{ form.displaced }}
+                            {{ form.displaced.errors }}
+                        </div>
+                    </div>
+
+                    <!-- Row 8 -->
+                    <div class="row mb-3 align-items-center">
+                        <div class="col-md-3 text-md-end">
+                            <label class="form-label" for="{{ form.educational_special_needs.id_for_label }}">
+                                {{ form.educational_special_needs.label }}
+                            </label>
+                        </div>
+                        <div class="col-md-3">
+                            {{ form.educational_special_needs }}
+                            {{ form.educational_special_needs.errors }}
+                        </div>
+
+                        <div class="col-md-3 text-md-end">
+                            <label class="form-label" for="{{ form.debtor.id_for_label }}">
+                                {{ form.debtor.label }}
+                            </label>
+                        </div>
+                        <div class="col-md-3">
+                            {{ form.debtor }}
+                            {{ form.debtor.errors }}
+                        </div>
+                    </div>
+
+                    <!-- Row 9 -->
+                    <div class="row mb-4 align-items-center">
+                        <div class="col-md-3 text-md-end">
+                            <label class="form-label" for="{{ form.tuition_fees_up_to_date.id_for_label }}">
+                                {{ form.tuition_fees_up_to_date.label }}
+                            </label>
+                        </div>
+                        <div class="col-md-3">
+                            {{ form.tuition_fees_up_to_date }}
+                            {{ form.tuition_fees_up_to_date.errors }}
+                        </div>
+
+                        <div class="col-md-3 text-md-end">
+                            <label class="form-label" for="{{ form.gender.id_for_label }}">
+                                {{ form.gender.label }}
+                            </label>
+                        </div>
+                        <div class="col-md-3">
+                            {{ form.gender }}
+                            {{ form.gender.errors }}
+                        </div>
+                    </div>
+
+                    <hr>
+
+                    <h5 class="mb-3">Academic Performance &amp; Context</h5>
+
+                    <!-- Row 10 -->
+                    <div class="row mb-3 align-items-center">
+                        <div class="col-md-3 text-md-end">
+                            <label class="form-label" for="{{ form.scholarship_holder.id_for_label }}">
+                                {{ form.scholarship_holder.label }}
+                            </label>
+                        </div>
+                        <div class="col-md-3">
+                            {{ form.scholarship_holder }}
+                            {{ form.scholarship_holder.errors }}
+                        </div>
+
+                        <div class="col-md-3 text-md-end">
+                            <label class="form-label" for="{{ form.age_at_enrollment.id_for_label }}">
+                                {{ form.age_at_enrollment.label }}
+                            </label>
+                        </div>
+                        <div class="col-md-3">
+                            {{ form.age_at_enrollment }}
+                            {{ form.age_at_enrollment.errors }}
+                        </div>
+                    </div>
+
+                    <!-- Row 11 -->
+                    <div class="row mb-3 align-items-center">
+                        <div class="col-md-3 text-md-end">
+                            <label class="form-label" for="{{ form.international.id_for_label }}">
+                                {{ form.international.label }}
+                            </label>
+                        </div>
+                        <div class="col-md-3">
+                            {{ form.international }}
+                            {{ form.international.errors }}
+                        </div>
+
+                        <div class="col-md-3 text-md-end">
+                            <label class="form-label" for="{{ form.curricular_units_1st_sem_credited.id_for_label }}">
+                                {{ form.curricular_units_1st_sem_credited.label }}
+                            </label>
+                        </div>
+                        <div class="col-md-3">
+                            {{ form.curricular_units_1st_sem_credited }}
+                            {{ form.curricular_units_1st_sem_credited.errors }}
+                        </div>
+                    </div>
+
+                    <!-- Row 12 -->
+                    <div class="row mb-3 align-items-center">
+                        <div class="col-md-3 text-md-end">
+                            <label class="form-label" for="{{ form.curricular_units_1st_sem_enrolled.id_for_label }}">
+                                {{ form.curricular_units_1st_sem_enrolled.label }}
+                            </label>
+                        </div>
+                        <div class="col-md-3">
+                            {{ form.curricular_units_1st_sem_enrolled }}
+                            {{ form.curricular_units_1st_sem_enrolled.errors }}
+                        </div>
+
+                        <div class="col-md-3 text-md-end">
+                            <label class="form-label" for="{{ form.curricular_units_1st_sem_evaluations.id_for_label }}">
+                                {{ form.curricular_units_1st_sem_evaluations.label }}
+                            </label>
+                        </div>
+                        <div class="col-md-3">
+                            {{ form.curricular_units_1st_sem_evaluations }}
+                            {{ form.curricular_units_1st_sem_evaluations.errors }}
+                        </div>
+                    </div>
+
+                    <!-- Row 13 -->
+                    <div class="row mb-3 align-items-center">
+                        <div class="col-md-3 text-md-end">
+                            <label class="form-label" for="{{ form.curricular_units_1st_sem_approved.id_for_label }}">
+                                {{ form.curricular_units_1st_sem_approved.label }}
+                            </label>
+                        </div>
+                        <div class="col-md-3">
+                            {{ form.curricular_units_1st_sem_approved }}
+                            {{ form.curricular_units_1st_sem_approved.errors }}
+                        </div>
+
+                        <div class="col-md-3 text-md-end">
+                            <label class="form-label" for="{{ form.curricular_units_1st_sem_grade.id_for_label }}">
+                                {{ form.curricular_units_1st_sem_grade.label }}
+                            </label>
+                        </div>
+                        <div class="col-md-3">
+                            {{ form.curricular_units_1st_sem_grade }}
+                            {{ form.curricular_units_1st_sem_grade.errors }}
+                        </div>
+                    </div>
+
+                    <!-- Row 14 -->
+                    <div class="row mb-3 align-items-center">
+                        <div class="col-md-3 text-md-end">
+                            <label class="form-label" for="{{ form.curricular_units_1st_sem_without_evaluations.id_for_label }}">
+                                {{ form.curricular_units_1st_sem_without_evaluations.label }}
+                            </label>
+                        </div>
+                        <div class="col-md-3">
+                            {{ form.curricular_units_1st_sem_without_evaluations }}
+                            {{ form.curricular_units_1st_sem_without_evaluations.errors }}
+                        </div>
+
+                        <div class="col-md-3 text-md-end">
+                            <label class="form-label" for="{{ form.curricular_units_2nd_sem_credited.id_for_label }}">
+                                {{ form.curricular_units_2nd_sem_credited.label }}
+                            </label>
+                        </div>
+                        <div class="col-md-3">
+                            {{ form.curricular_units_2nd_sem_credited }}
+                            {{ form.curricular_units_2nd_sem_credited.errors }}
+                        </div>
+                    </div>
+
+                    <!-- Row 15 -->
+                    <div class="row mb-3 align-items-center">
+                        <div class="col-md-3 text-md-end">
+                            <label class="form-label" for="{{ form.curricular_units_2nd_sem_enrolled.id_for_label }}">
+                                {{ form.curricular_units_2nd_sem_enrolled.label }}
+                            </label>
+                        </div>
+                        <div class="col-md-3">
+                            {{ form.curricular_units_2nd_sem_enrolled }}
+                            {{ form.curricular_units_2nd_sem_enrolled.errors }}
+                        </div>
+
+                        <div class="col-md-3 text-md-end">
+                            <label class="form-label" for="{{ form.curricular_units_2nd_sem_evaluations.id_for_label }}">
+                                {{ form.curricular_units_2nd_sem_evaluations.label }}
+                            </label>
+                        </div>
+                        <div class="col-md-3">
+                            {{ form.curricular_units_2nd_sem_evaluations }}
+                            {{ form.curricular_units_2nd_sem_evaluations.errors }}
+                        </div>
+                    </div>
+
+                    <!-- Row 16 -->
+                    <div class="row mb-3 align-items-center">
+                        <div class="col-md-3 text-md-end">
+                            <label class="form-label" for="{{ form.curricular_units_2nd_sem_approved.id_for_label }}">
+                                {{ form.curricular_units_2nd_sem_approved.label }}
+                            </label>
+                        </div>
+                        <div class="col-md-3">
+                            {{ form.curricular_units_2nd_sem_approved }}
+                            {{ form.curricular_units_2nd_sem_approved.errors }}
+                        </div>
+
+                        <div class="col-md-3 text-md-end">
+                            <label class="form-label" for="{{ form.curricular_units_2nd_sem_grade.id_for_label }}">
+                                {{ form.curricular_units_2nd_sem_grade.label }}
+                            </label>
+                        </div>
+                        <div class="col-md-3">
+                            {{ form.curricular_units_2nd_sem_grade }}
+                            {{ form.curricular_units_2nd_sem_grade.errors }}
+                        </div>
+                    </div>
+
+                    <!-- Row 17 -->
+                    <div class="row mb-3 align-items-center">
+                        <div class="col-md-3 text-md-end">
+                            <label class="form-label" for="{{ form.curricular_units_2nd_sem_without_evaluations.id_for_label }}">
+                                {{ form.curricular_units_2nd_sem_without_evaluations.label }}
+                            </label>
+                        </div>
+                        <div class="col-md-3">
+                            {{ form.curricular_units_2nd_sem_without_evaluations }}
+                            {{ form.curricular_units_2nd_sem_without_evaluations.errors }}
+                        </div>
+
+                        <div class="col-md-3 text-md-end">
+                            <label class="form-label" for="{{ form.unemployment_rate.id_for_label }}">
+                                {{ form.unemployment_rate.label }}
+                            </label>
+                        </div>
+                        <div class="col-md-3">
+                            {{ form.unemployment_rate }}
+                            {{ form.unemployment_rate.errors }}
+                        </div>
+                    </div>
+
+                    <!-- Row 18 -->
+                    <div class="row mb-3 align-items-center">
+                        <div class="col-md-3 text-md-end">
+                            <label class="form-label" for="{{ form.inflation_rate.id_for_label }}">
+                                {{ form.inflation_rate.label }}
+                            </label>
+                        </div>
+                        <div class="col-md-3">
+                            {{ form.inflation_rate }}
+                            {{ form.inflation_rate.errors }}
+                        </div>
+
+                        <div class="col-md-3 text-md-end">
+                            <label class="form-label" for="{{ form.gdp.id_for_label }}">
+                                {{ form.gdp.label }}
+                            </label>
+                        </div>
+                        <div class="col-md-3">
+                            {{ form.gdp }}
+                            {{ form.gdp.errors }}
+                        </div>
+                    </div>
+
+                    <div class="row mt-3">
+                        <div class="col-md-4 offset-md-4">
+                            <button type="submit" class="btn btn-primary w-100">
+                                Predict
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="card-footer text-center">
+                <a href="{% url 'history' %}">View my prediction history</a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
