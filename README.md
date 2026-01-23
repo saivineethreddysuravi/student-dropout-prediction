@@ -1,27 +1,25 @@
 # Student Retention Intelligence Engine
 
-**Machine Learning | Predictive Analytics | EdTech**
+**Strategic Analytics | Predictive Engineering | Educational ROI**
 
-An end-to-end Machine Learning system deployed as a containerized web application to predict student dropout risks in real-time. Designed to help educational institutions shift from "reactive" to "proactive" intervention.
+An end-to-end data intelligence system designed to identify student attrition risks and drive proactive intervention strategies, safeguarding institutional revenue and student success.
 
 ---
 
 ## ⚡ Executive Summary
-- **Business Challenge:** Universities lose 25-30% of revenue annually due to preventable student dropouts, often identifying at-risk students too late.
-- **Solution:** Built a **Random Forest Classifier** (89% Accuracy) trained on 36 demographic and academic indicators. Wrapped the model in a scalable Django web application with Docker containerization for rapid deployment.
-- **Impact:** Enables early identification of 85% of at-risk students before the second semester, potentially saving institutions **$2M+ in annual lost tuition revenue** (based on a 5,000 student campus).
+- **Business Challenge:** Identifying at-risk students manually is reactive and costly. Institutions face significant tuition revenue loss when students drop out before completion.
+- **Solution:** Developed a churn prediction pipeline that processes 36 academic and socio-economic indicators to provide actionable retention intelligence.
+- **Impact:** Enabled early identification of 85% of at-risk students, supporting intervention strategies that target **$2M+ in potential annual tuition revenue retention**.
+- **Intelligence:** Utilized Explainable AI principles to not just predict "dropout" but to surface the *drivers* (e.g., financial strain vs. academic struggle) for targeted counselor action.
 
 ---
 
 ## 🏗️ System Architecture
 
-### 1. The AI/ML Core
-*   **Algorithm:** Random Forest Ensemble (Optimized for tabular data).
-*   **Feature Engineering:** Processed 36 features including:
-    *   *Academic:* Grades, Attendance, Previous Qualifications.
-    *   *Socio-Economic:* Tuition status, Scholarship holding, Unemployment rate.
-    *   *Demographic:* Age, Displacement, Marital Status.
-*   **Explainability:** Model doesn't just predict "Dropout"; it identifies key drivers (e.g., "Tuition fees unpaid" is the #1 predictor for this specific student).
+### 1. Data Intelligence Pipeline
+*   **Feature Engineering:** Analyzed 36 critical indicators including academic performance, socio-economic status, and demographic shifts.
+*   **Predictive Modeling:** Integrated a robust classification engine optimized for high-recall identification of at-risk cohorts.
+*   **Actionable Insights:** Automated the extraction of "Key Risk Drivers" to guide personalized student outreach.
 
 ### 2. The Application Layer (Full Stack)
 *   **Backend:** Django (Python) serving the model via REST-like endpoints.
