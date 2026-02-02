@@ -77,7 +77,7 @@ Once the application is running, the following routes are available:
 
 *   `/login/` - User login page.
 *   `/register/` - New counselor registration.
-*   `/predict/` - **Main Feature:** Input student data to generate dropout prediction.
+*   `/predict/` - **Main Feature:** Input student data to generate dropout prediction. (See [API Docs](docs/API_DOCUMENTATION.md))
 *   `/history/` - View past predictions and student records.
 *   `/admin/` - Django Administration panel (Superuser access required).
 *   `/field-info/` - detailed descriptions of the input fields.
