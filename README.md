@@ -9,6 +9,10 @@ Python, Docker, Scikit-Learn, PostgreSQL, FastAPI, Explainable AI (SHAP)
 - Contributed to $2M+ in retained tuition revenue via targeted interventions
 - Implemented Explainable AI to identify specific attrition drivers
 
+## Data Quality & Risk Modeling
+- **Retention Risk Assessment:** Established `docs/RETENTION_RISK_FRAMEWORK.md` for measuring and managing model and data risks.
+- **Data Quality Focused:** Implemented validation checks for input integrity to reduce false-positive interventions.
+
 ## Day 4: Visualization & Dashboarding
 - Added `src/visualization_utils.py` for model performance evaluation.
 - Integrated ROC/AUC curve plotting for threshold optimization.
