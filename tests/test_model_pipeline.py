@@ -1,6 +1,6 @@
 import pytest
 import numpy as np
-from scripts.train_model import prepare_features
+from src.train_model import prepare_features
 
 def test_feature_scaling():
     """Ensure that features like attendance_rate are properly normalized."""
