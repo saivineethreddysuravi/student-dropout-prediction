@@ -1,21 +1,22 @@
-## Overview
-This project demonstrates machine learning engineering and microservices architecture for predictive analytics in education, focusing on student retention and revenue protection.
+# Student Retention Intelligence Engine
+**Sai Vineeth Reddy Suravi | Senior Data Analyst**
 
-## Tools & Technologies
-Python, Docker, Scikit-Learn, PostgreSQL, FastAPI, Explainable AI (SHAP)
+This project implements a machine learning engineering framework for predictive analytics in education, specifically focused on student retention and institutional revenue protection.
 
-## Key Outcomes
-- Deployed a churn prediction microservice with 89% accuracy
-- Contributed to $2M+ in retained tuition revenue via targeted interventions
-- Implemented Explainable AI to identify specific attrition drivers
+## Performance & Impact
+- **Revenue Retention:** Deployed a churn prediction microservice with **89% accuracy**, contributing to **$2M+ in retained tuition revenue** via targeted student interventions.
+- **Decision Clarity:** Integrated Explainable AI (SHAP) to isolate and surface specific attrition drivers (e.g., financial strain vs. academic performance) for university administrators.
+- **Model Optimization:** Implemented automated hyperparameter tuning (RandomizedSearchCV) to maximize ROC-AUC and prevent overfitting on high-dimensional student data.
 
-## Data Quality & Risk Modeling
-- **Retention Risk Assessment:** Established `docs/RETENTION_RISK_FRAMEWORK.md` for measuring and managing model and data risks.
-- **Data Quality Focused:** Implemented validation checks for input integrity to reduce false-positive interventions.
+## System Architecture
+- **Model Governance:** Established a Model Reliability Framework (`docs/RETENTION_RISK_FRAMEWORK.md`) to measure and mitigate prediction bias and data drift.
+- **Production Readiness:** Containerized the prediction engine via Docker to ensure consistent deployment across cloud environments.
+- **Automation:** Built automated reliability testing to verify model accuracy before deployment, simulating a professional CI/CD lifecycle.
 
-## Day 4: Visualization & Dashboarding
-- Added `src/visualization_utils.py` for model performance evaluation.
-- Integrated ROC/AUC curve plotting for threshold optimization.
-## Day 5: Scalable Reliability & Model Governance
-**"Bullet-Proofing Student Retention Insights"**
-I've upgraded the **Student Retention Intelligence Engine** to include automated reliability testing. Every model update is now automatically verified for 89% accuracy before it can be deployed, protecting **$2M+ in tuition revenue** from poor data. This automation ensures that university administrators always have trustworthy, "audit-ready" insights for immediate intervention, simulating a high-stakes professional deployment.
+## Technical Stack
+- **Machine Learning:** Python (Scikit-Learn, SHAP, Pandas)
+- **Infrastructure:** Docker, FastAPI, PostgreSQL
+- **Statistical Modeling:** Hyperparameter Optimization, Threshold Analysis
+
+---
+[LinkedIn](https://www.linkedin.com/in/saivineethreddysuravi) | [GitHub](https://github.com/saivineethreddysuravi) | [Portfolio](https://vineeeth.com)
